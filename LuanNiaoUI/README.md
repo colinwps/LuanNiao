@@ -183,6 +183,9 @@ cd vue-element-admin
 # install dependency
 npm install
 
+# 采用国内npm
+npm install --registry=https://registry.npm.taobao.org
+
 # develop
 npm run dev
 ```
