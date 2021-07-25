@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.colinapp.luanniao.mapper.UserMapper">
+
+    <resultMap id="userListMap" type="com.colinapp.luanniao.domain.UserList">
+        <result column="userId"       property="UserId" />
+        <result column="userName"  property="userName" />
+        <result column="userAge"  property="userAge" />
+    </resultMap>
+
+    <insert id="addUser" parameterType="com.colinapp.luanniao.domain.UserList">
+        insert  into userList values (#{userId},#{userName},#{userAge})
+    </insert>
+
+</mapper>

@@ -1,5 +1,7 @@
 package com.colinapp.luanniao;
 
+import com.colinapp.luanniao.domain.UserList;
+import com.colinapp.luanniao.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,11 +11,15 @@ import org.springframework.jdbc.core.JdbcTemplate;
 class LuanniaoApplicationTests {
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+   UserMapper userMapper;
 
     @Test
     void contextLoads() {
-        jdbcTemplate.execute("Create Table tt;");
+        UserList my = new UserList();
+        my.userAge = 18;
+        my.userId = "111";
+        my.userName = "colin";
+        userMapper.addUser(my);
     }
 
 }
